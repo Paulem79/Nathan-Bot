@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 const Collection = require("discord.js")
 
-const bdd = require("./bdd.json");
+const token = require("./token.json");
 
 const prefix = "+";
 
@@ -17,7 +17,7 @@ server.listen(3000);
 client.prefix = prefix;
 client.commands = new Discord.Collection();
 
-client.on("ready", () => require("./commands/status.js")(client, bdd));
+client.on("ready", () => require("./commands/status.js")(client));
 client.on("message", message => require("./commands/help.js")(client, message, Discord))
 
-client.login(process.env.TOKEN)
+client.login(token.token)
