@@ -20,4 +20,6 @@ client.commands = new Discord.Collection();
 client.on("ready", () => require("./commands/status.js")(client));
 client.on("message", message => require("./commands/help.js")(client, message, Discord))
 
+console.log("Connecté")
+
 client.login(token.token)
